@@ -1,7 +1,7 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends
 
-from LB3.modules.book import Book, BookCreate
+from schemas.book import Book, BookCreate
 from .crud import get_books, create_book
 from .dependencies import get_book_by_slug
 
@@ -23,4 +23,5 @@ def add_book(book_in: BookCreate):
 def book_details(
     book: Annotated[Book, Depends(get_book_by_slug)],
 ):
+
     return book
