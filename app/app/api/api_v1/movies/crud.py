@@ -1,4 +1,4 @@
-from LB3.modules.movie import Movie
+from schemas.movie import Movie
 from fastapi import HTTPException, status
 
 
@@ -21,6 +21,7 @@ class MovieStorage:
     def create(self, movie: Movie) -> Movie:
         self._movies.append(movie)
         return movie
+
 
 
 movie_storage = MovieStorage()
