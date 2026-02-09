@@ -1,4 +1,4 @@
-from LB3.modules.book import Book
+from schemas.book import Book
 
 BOOKS: list[Book] = [
     Book(
@@ -22,4 +22,5 @@ def get_books() -> list[Book]:
 
 def create_book(book: Book) -> Book:
     BOOKS.append(book)
+
     return book
