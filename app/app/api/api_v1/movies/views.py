@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from LB3.modules.movie import Movie, MovieCreate
+from schemas.movie import Movie, MovieCreate
 from .crud import movie_storage
 from .dependencies import get_movie_by_slug
 from typing import Annotated
@@ -21,4 +21,5 @@ def create_movie(movie_in: MovieCreate):
 def get_movie(
     movie: Annotated[Movie, Depends(get_movie_by_slug)],
 ):
+
     return movie
